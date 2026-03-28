@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandStats - Live Wedstrijdstatistieken voor Handbalclubs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: white;
+            padding: 100px 20px 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #FF6B35;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Problem/Solution Section */
+        .problem-solution {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 60px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .comparison-card.problem {
+            border-top: 5px solid #e74c3c;
+        }
+
+        .comparison-card.solution {
+            border-top: 5px solid #27ae60;
+        }
+
+        .comparison-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .comparison-card.problem h3 {
+            color: #e74c3c;
+        }
+
+        .comparison-card.solution h3 {
+            color: #27ae60;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .comparison-card li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .comparison-card.problem li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .comparison-card.solution li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            font-size: 1.05rem;
+        }
+
+        /* Screenshot Section */
+        .screenshots {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .screenshot-item {
+            text-align: center;
+        }
+
+        .screenshot-wrapper {
+            background: #2c3e50;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot-wrapper:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+        }
+
+        .screenshot-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .screenshot-item h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .screenshot-item p {
+            color: #7f8c8d;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 40px auto;
+            border-left: 5px solid #FF6B35;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #FF6B35;
+            font-size: 1.1rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .pricing-card {
+            background: white;
+            color: #2c3e50;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #FF6B35;
+            margin: 20px 0;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #F7931E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+
+        .button-loading {
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stop met Papieren Scoreformulieren</h1>
+            <p class="subtitle">Track live statistieken, scores en spelerdata tijdens je handbalwedstrijden - professioneel en overzichtelijk</p>
+            <a href="#contact" class="cta-button">Aanvragen voor Jouw Club</a>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <h2 class="section-title">Herkenbaar?</h2>
+            <p class="section-subtitle">De meeste clubs worstelen nog steeds met verouderde methoden</p>
+            
+            <div class="comparison">
+                <div class="comparison-card problem">
+                    <h3>Zonder HandStats</h3>
+                    <ul>
+                        <li>Papieren formulieren die kwijtraken</li>
+                        <li>Achteraf statistieken uitrekenen</li>
+                        <li>Geen live inzicht tijdens de wedstrijd</li>
+                        <li>Handmatig data invoeren na afloop</li>
+                        <li>Fouten in de administratie</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card solution">
+                    <h3>Met HandStats</h3>
+                    <ul>
+                        <li>Alles digitaal en overzichtelijk</li>
+                        <li>Live statistieken tijdens de wedstrijd</li>
+                        <li>Direct inzicht in spelerperformance</li>
+                        <li>Automatische berekeningen</li>
+                        <li>Toegang vanaf elk apparaat</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Wat Krijg Je?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Live Score Tracking</h3>
+                    <p>Houd de score bij en zie direct alle doelpunten, assists en statistieken tijdens de wedstrijd</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Spelerstatistieken</h3>
+                    <p>Track individuele prestaties: doelpunten, assists, strafworpen, tijdsstraffen en meer</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Overal Toegang</h3>
+                    <p>Werkt op telefoon, tablet en laptop - perfect voor langs de lijn</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Razendsnelle Invoer</h3>
+                    <p>Geen gedoe met ingewikkelde menu's - registreer acties met één tik</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Wedstrijdoverzichten</h3>
+                    <p>Bekijk alle wedstrijddata in één oogopslag, nu en in het verleden</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Maatwerk voor Jouw Club</h3>
+                    <p>Aangepast aan jouw teams, logo en clubkleuren</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots">
+        <div class="container">
+            <h2 class="section-title">Zo Ziet Het Eruit</h2>
+            <p class="section-subtitle">Van setup tot live tracking - alles in één systeem</p>
+            
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <div class="screenshot-wrapper">
+                        <img src="1774701166613_image.png" alt="Team Roster Setup" loading="lazy">
+                    </div>
+                    <h3>1. Vul Je Team In</h3>
+                    <p>Stel je wedstrijd op met keeper, veldspelers en reserves. Import spelers of vul ze snel in.</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <div class="screenshot-wrapper">
+                        <img src="1774701191534_image.png" alt="Live Tracking Interface" loading="lazy">
+                    </div>
+                    <h3>2. Track Live Tijdens de Wedstrijd</h3>
+                    <p>Registreer doelpunten, assists, schoten, straffen met één tik. Simpel en razendsnel.</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <div class="screenshot-wrapper">
+                        <img src="1774701204519_image.png" alt="Player Statistics Dashboard" loading="lazy">
+                    </div>
+                    <h3>3. Gedetailleerde Statistieken</h3>
+                    <p>Bekijk schot-efficiëntie, keeper stats, kaarten, en zelfs shot zones per speler.</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <div class="screenshot-wrapper">
+                        <img src="1774701263454_image.png" alt="Real-time Event Log" loading="lazy">
+                    </div>
+                    <h3>4. Real-Time Event Log</h3>
+                    <p>Zie elk moment van de wedstrijd terug met tijdstempels. Actieve straffen altijd in beeld.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Wat Clubs Zeggen</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Eindelijk geen papieren formulieren meer! Tijdens de wedstrijd kunnen we direct zien wie goed presteert. Bespaart ons uren werk na afloop."</p>
+                <p class="testimonial-author">- [Jouw Testimonial Hier]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Investering</h2>
+            <div class="pricing-card">
+                <h3>Custom Oplossing voor Jouw Club</h3>
+                <div class="price">Vanaf €500</div>
+                <p style="color: #7f8c8d; margin-bottom: 30px;">Eenmalige setup, volledig op maat</p>
+                
+                <ul class="pricing-features">
+                    <li>Aangepast aan jouw teams</li>
+                    <li>Jouw clublogo en kleuren</li>
+                    <li>Live wedstrijdstatistieken</li>
+                    <li>Spelerdata tracking</li>
+                    <li>Toegang voor meerdere gebruikers</li>
+                    <li>Volledige instructie en support</li>
+                    <li>Updates en onderhoud beschikbaar</li>
+                </ul>
+                
+                <p style="margin-top: 30px; color: #7f8c8d;"><strong>Optioneel:</strong> Hosting & onderhoud vanaf €30/maand</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Interesse? Laten We Praten</h2>
+            <p class="section-subtitle">Vul het formulier in en ik neem binnen 24 uur contact op</p>
+            
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Replace with your actual Web3Forms access key -->
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+                
+                <!-- Honeypot spam protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                
+                <!-- Custom subject line -->
+                <input type="hidden" name="subject" value="Nieuwe Aanvraag HandStats">
+                
+                <!-- Redirect after submission (optional) -->
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                
+                <div class="form-group">
+                    <label for="name">Naam *</label>
+                    <input type="text" id="name" name="name" required placeholder="Jan de Vries">
+                </div>
+                
+                <div class="form-group">
+                    <label for="club">Clubnaam *</label>
+                    <input type="text" id="club" name="club" required placeholder="HV Helius">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required placeholder="jan@hvhelius.nl">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefoonnummer</label>
+                    <input type="tel" id="phone" name="phone" placeholder="06 12345678">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Vertel over je club en wat je zoekt *</label>
+                    <textarea id="message" name="message" required placeholder="We zijn op zoek naar een manier om onze wedstrijdstatistieken beter bij te houden..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button" id="submitBtn">
+                    <span class="button-text">Stuur Aanvraag</span>
+                    <span class="button-loading" style="display: none;">Verzenden...</span>
+                </button>
+                
+                <div id="successMessage" class="form-message success-message" style="display: none;">
+                    <strong>✓ Bedankt!</strong> Je aanvraag is verstuurd. Ik neem binnen 24 uur contact op.
+                </div>
+                
+                <div id="errorMessage" class="form-message error-message" style="display: none;">
+                    <strong>✗ Oeps!</strong> Er ging iets mis. Probeer het opnieuw of mail direct naar: <strong>jouw@email.nl</strong>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 HandStats - Custom Web Apps voor Sportclubs | Ontwikkeld in Nederland</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling with Web3Forms
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const buttonText = submitBtn.querySelector('.button-text');
+        const buttonLoading = submitBtn.querySelector('.button-loading');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            buttonText.style.display = 'none';
+            buttonLoading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                }
+            } catch (error) {
+                // Show error message on network failure
+                errorMessage.style.display = 'block';
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button state
+                buttonText.style.display = 'inline-block';
+                buttonLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
