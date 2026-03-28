@@ -264,6 +264,11 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .screenshot-wrapper:hover {
@@ -274,6 +279,8 @@
         .screenshot-wrapper img {
             width: 100%;
             height: auto;
+            max-height: 500px;
+            object-fit: contain;
             border-radius: 8px;
             display: block;
         }
@@ -289,6 +296,68 @@
             color: #7f8c8d;
             font-size: 1.05rem;
             line-height: 1.6;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            border-radius: 8px;
         }
 
         /* Testimonial Section */
@@ -653,16 +722,13 @@
             
             <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Replace with your actual Web3Forms access key -->
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+                <input type="hidden" name="access_key" value="ebc1d124-320a-4a84-a34f-2f8c0c8803e9">
                 
                 <!-- Honeypot spam protection -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 
                 <!-- Custom subject line -->
                 <input type="hidden" name="subject" value="Nieuwe Aanvraag HandStats">
-                
-                <!-- Redirect after submission (optional) -->
-                <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 
                 <div class="form-group">
                     <label for="name">Naam *</label>
@@ -699,7 +765,7 @@
                 </div>
                 
                 <div id="errorMessage" class="form-message error-message" style="display: none;">
-                    <strong>✗ Oeps!</strong> Er ging iets mis. Probeer het opnieuw of mail direct naar: <strong>jouw@email.nl</strong>
+                    <strong>✗ Oeps!</strong> Er ging iets mis. Probeer het opnieuw of mail direct naar: <strong>jeremybekkers@icloud.com</strong>
                 </div>
             </form>
         </div>
@@ -709,6 +775,13 @@
     <footer>
         <p>&copy; 2026 HandStats - Custom Web Apps voor Sportclubs | Ontwikkeld in Nederland</p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img src="" alt="" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
 
     <script>
         // Smooth scrolling for anchor links
@@ -720,6 +793,53 @@
                 });
             });
         });
+
+        // Lightbox functionality for screenshots
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        // Add click handlers to all screenshot images
+        document.querySelectorAll('.screenshot-wrapper img').forEach(img => {
+            img.addEventListener('click', function() {
+                lightbox.classList.add('active');
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                
+                // Get the caption from the parent screenshot-item
+                const captionElement = this.closest('.screenshot-item').querySelector('h3');
+                lightboxCaption.textContent = captionElement ? captionElement.textContent : '';
+                
+                // Prevent body scrolling when lightbox is open
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox when clicking the X button
+        lightboxClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeLightbox();
+        });
+
+        // Close lightbox when clicking the background
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
         // Form submission handling with Web3Forms
         const form = document.getElementById('contactForm');
