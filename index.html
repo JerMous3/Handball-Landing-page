@@ -939,4 +939,11 @@
                 errorMessage.style.display = 'block';
                 console.error('Form submission error:', error);
             } finally {
-                // Reset b
+                // Reset button state
+                submitBtn.disabled = false;
+                buttonText.textContent = originalButtonText;
+            }
+        });
+    </script>
+</body>
+</html>
