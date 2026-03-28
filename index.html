@@ -248,13 +248,31 @@
 
         .screenshots-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 40px;
             margin-top: 60px;
         }
 
         .screenshot-item {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screenshot-item h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+            order: 1;
+        }
+
+        .screenshot-item p {
+            color: #7f8c8d;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            order: 2;
         }
 
         .screenshot-wrapper {
@@ -262,13 +280,13 @@
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
+            order: 3;
         }
 
         .screenshot-wrapper:hover {
@@ -283,19 +301,6 @@
             object-fit: contain;
             border-radius: 8px;
             display: block;
-        }
-
-        .screenshot-item h3 {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .screenshot-item p {
-            color: #7f8c8d;
-            font-size: 1.05rem;
-            line-height: 1.6;
         }
 
         /* Lightbox Modal */
@@ -547,6 +552,10 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -645,35 +654,35 @@
             
             <div class="screenshots-grid">
                 <div class="screenshot-item">
+                    <h3>1. Vul Je Team In</h3>
+                    <p>Stel je wedstrijd op met keeper, veldspelers en reserves. Import spelers of vul ze snel in.</p>
                     <div class="screenshot-wrapper">
                         <img src="1774701166613_image.png" alt="Team Roster Setup" loading="lazy">
                     </div>
-                    <h3>1. Vul Je Team In</h3>
-                    <p>Stel je wedstrijd op met keeper, veldspelers en reserves. Import spelers of vul ze snel in.</p>
                 </div>
                 
                 <div class="screenshot-item">
+                    <h3>2. Track Live Tijdens de Wedstrijd</h3>
+                    <p>Registreer doelpunten, assists, schoten, straffen met één tik. Simpel en razendsnel.</p>
                     <div class="screenshot-wrapper">
                         <img src="1774701191534_image.png" alt="Live Tracking Interface" loading="lazy">
                     </div>
-                    <h3>2. Track Live Tijdens de Wedstrijd</h3>
-                    <p>Registreer doelpunten, assists, schoten, straffen met één tik. Simpel en razendsnel.</p>
                 </div>
                 
                 <div class="screenshot-item">
+                    <h3>3. Gedetailleerde Statistieken</h3>
+                    <p>Bekijk schot-efficiëntie, keeper stats, kaarten, en zelfs shot zones per speler.</p>
                     <div class="screenshot-wrapper">
                         <img src="1774701204519_image.png" alt="Player Statistics Dashboard" loading="lazy">
                     </div>
-                    <h3>3. Gedetailleerde Statistieken</h3>
-                    <p>Bekijk schot-efficiëntie, keeper stats, kaarten, en zelfs shot zones per speler.</p>
                 </div>
                 
                 <div class="screenshot-item">
+                    <h3>4. Real-Time Event Log</h3>
+                    <p>Zie elk moment van de wedstrijd terug met tijdstempels. Actieve straffen altijd in beeld.</p>
                     <div class="screenshot-wrapper">
                         <img src="1774701263454_image.png" alt="Real-time Event Log" loading="lazy">
                     </div>
-                    <h3>4. Real-Time Event Log</h3>
-                    <p>Zie elk moment van de wedstrijd terug met tijdstempels. Actieve straffen altijd in beeld.</p>
                 </div>
             </div>
         </div>
@@ -765,7 +774,7 @@
                 </div>
                 
                 <div id="errorMessage" class="form-message error-message" style="display: none;">
-                    <strong>✗ Oeps!</strong> Er ging iets mis. Probeer het opnieuw of mail direct naar: <strong>jeremybekkers@icloud.com</strong>
+                    <strong>✗ Oeps!</strong> Er ging iets mis. Probeer het opnieuw of mail direct naar: <strong>jeremybekkers@icloud</strong>
                 </div>
             </form>
         </div>
