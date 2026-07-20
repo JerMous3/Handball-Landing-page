@@ -186,7 +186,17 @@ p { max-width: var(--measure); color: var(--text-2); }
   flex-shrink: 0;
 }
 
-.brand svg { width: 28px; height: 28px; color: var(--text-1); }
+/* The brand mark is Logo.png. Its artwork is a single flat navy with every
+   seam and counter carried by the alpha channel, which measures 2.09:1 against
+   the canvas and all but disappears. brightness(0) invert(1) recolours the
+   opaque pixels to white and leaves alpha untouched, so the silhouette is the
+   original file exactly; the opacity keeps it off pure white. */
+.brand-mark {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
+}
 
 .brand-word {
   font-family: var(--font-display);
