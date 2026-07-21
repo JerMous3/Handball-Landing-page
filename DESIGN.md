@@ -4,6 +4,19 @@ How this site is built. Deployed at <https://handball-tracker.com>.
 
 Values originate in the product's `polish-theme.css` (in the app repo, `JerMous3/Handball-App-v2`) and are copied here deliberately so the marketing site and the product cannot drift. **If a token changes there, change it here too.** There is no build step linking them.
 
+## Language (NL / EN)
+
+Dutch is the real page. The Dutch copy lives in the HTML, so it is what search engines index and what shows with JavaScript off, with no flash. English is applied on top by `i18n.js` from a dictionary; there is no separate English URL. The `NL / EN` toggle in the nav stores the choice in `localStorage` under `ht-lang` and defaults to Dutch.
+
+**When you edit copy, edit the Dutch in the HTML and the matching English in `i18n.js`.** The markup contract:
+
+- `data-i18n="key"` swaps `textContent`. Use a wrapping `<span>` when the element also holds an icon.
+- `data-i18n-html="key"` swaps `innerHTML`, for text that contains a `<strong>` or a link.
+- `data-i18n-alt` / `data-i18n-aria` swap those attributes.
+- Page `<title>` and meta description come from `data-title-en` / `data-desc-en` on `<html>`; the Dutch is the live tag.
+
+The dictionary holds English only; Dutch is read from the DOM at load, so it has one home. The decorative scoreboard localises its generated rows in `site.js`, which listens for the `ht-lang` event. The privacy page is legally binding in Dutch; the English is a convenience translation, marked as such at the top.
+
 ## Color
 
 Strategy: **Restrained.** Tinted near-neutrals carry the surface, one accent stays under 10%.

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl"
+      data-title-en="Handball-Tracker | Keep the whole match, not just the score"
+      data-desc-en="Handball-Tracker records every shot, save, card and suspension as it happens, then turns your season into statistics you can use. Built for the coach on the sideline.">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Handball-Tracker | Keep the whole match, not just the score</title>
-<meta name="description" content="Handball-Tracker records every shot, save, card and suspension as it happens, then turns your season into statistics you can use. Built for the coach on the sideline.">
+<title>Handball-Tracker | Leg de hele wedstrijd vast, niet alleen de stand</title>
+<meta name="description" content="Handball-Tracker legt elke schot, redding, kaart en tijdstraf vast op het moment zelf, en maakt van je seizoen bruikbare statistieken. Gebouwd voor de coach langs de lijn.">
 
 <meta property="og:title" content="Handball-Tracker">
-<meta property="og:description" content="Keep the whole match, not just the score. Live match tracking, live broadcast, and season statistics for handball coaches and clubs.">
+<meta property="og:description" content="Leg de hele wedstrijd vast, niet alleen de stand. Live wedstrijdregistratie, live uitzenden en seizoensstatistieken voor handbalcoaches en verenigingen.">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="favicon-32.png" sizes="32x32">
@@ -19,7 +21,7 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="skip">Naar de inhoud</a>
 
 <header class="nav" id="nav">
   <div class="shell nav-inner">
@@ -28,12 +30,16 @@
       <span class="brand-word">Handball-Tracker</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#tracking">Tracking</a></li>
-      <li><a href="#live">Live</a></li>
-      <li><a href="#stats">Statistics</a></li>
-      <li><a href="pricing.html">Plans</a></li>
+      <li><a href="#tracking" data-i18n="nav.tracking">Bijhouden</a></li>
+      <li><a href="#live" data-i18n="nav.live">Live</a></li>
+      <li><a href="#stats" data-i18n="nav.stats">Statistieken</a></li>
+      <li><a href="pricing.html" data-i18n="nav.plans">Prijzen</a></li>
     </ul>
-    <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access">Request access</a>
+    <div class="lang-switch" role="group" aria-label="Taal kiezen / Choose language">
+      <button type="button" class="lang-btn" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
   </div>
 </header>
 
@@ -41,7 +47,7 @@
 <div class="shell rail-grid">
 
   <!-- ------------------------------------------------------ rail -->
-  <nav class="rail" aria-label="Page sections">
+  <nav class="rail" aria-label="Paginasecties">
     <ul class="rail-list" id="rail">
       <li class="rail-item" data-for="throwoff">00:00</li>
       <li class="rail-item" data-for="problem">04:15</li>
@@ -58,22 +64,22 @@
 
     <!-- ---------------------------------------------------- hero -->
     <section class="hero" id="throwoff">
-      <span class="stamp">00:00 &middot; THROW-OFF</span>
+      <span class="stamp" data-i18n-html="hero.stamp">00:00 &middot; BEGINWORP</span>
       <div class="hero-grid">
         <div>
-          <h1 class="display d-hero" data-reveal>Keep the whole match. Not just the score.</h1>
-          <p class="lede reveal-d1" data-reveal>
-            Handball-Tracker records every shot, save, card and two-minute suspension as it
-            happens, then adds your season up on its own. Built for the coach on the sideline
-            with one hand free.
+          <h1 class="display d-hero" data-reveal data-i18n="hero.h1">Leg de hele wedstrijd vast. Niet alleen de stand.</h1>
+          <p class="lede reveal-d1" data-reveal data-i18n="hero.lede">
+            Handball-Tracker legt elke schot, redding, kaart en tijdstraf vast op het moment
+            zelf, en telt je seizoen vanzelf op. Gebouwd voor de coach langs de lijn, met één
+            hand vrij.
           </p>
           <div class="hero-cta reveal-d2" data-reveal>
-            <a class="btn btn-primary btn-lg" href="https://app.handball-tracker.com/?request=access">Request access</a>
-            <a class="btn btn-ghost btn-lg" href="#demo">Watch the demo</a>
+            <a class="btn btn-primary btn-lg" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
+            <a class="btn btn-ghost btn-lg" href="#demo" data-i18n="hero.watch">Bekijk de demo</a>
           </div>
-          <p class="hero-note reveal-d2" data-reveal>
-            Access runs on an invite code, issued within 24 hours. Works in the browser on any
-            phone, tablet or laptop, with nothing to install.
+          <p class="hero-note reveal-d2" data-reveal data-i18n="hero.note">
+            Toegang loopt via een uitnodigingscode, die je binnen 24 uur ontvangt. Werkt in de
+            browser op elke telefoon, tablet of laptop, zonder installatie.
           </p>
         </div>
 
@@ -81,7 +87,7 @@
         <div class="board reveal-d3" data-reveal aria-hidden="true">
           <div class="board-top">
             <div>
-              <div class="board-half" id="boardHalf">1ST HALF</div>
+              <div class="board-half" id="boardHalf" data-i18n="board.half">1E HELFT</div>
               <div class="board-clock tnum" id="boardClock">00:00</div>
             </div>
             <div class="board-score">
@@ -92,7 +98,7 @@
           <ul class="board-log" id="boardLog"></ul>
           <div class="board-foot">
             <span class="pulse"></span>
-            <span id="boardFoot">Recording</span>
+            <span id="boardFoot">Aan het registreren</span>
           </div>
         </div>
       </div>
@@ -102,16 +108,16 @@
     <section class="sec sec-tight" id="problem">
       <span class="stamp">04:15</span>
       <div class="sec-head">
-        <h2 class="display d-1" data-reveal>The sheet never survives the car park</h2>
+        <h2 class="display d-1" data-reveal data-i18n="problem.h2">Het wedstrijdformulier overleeft de parkeerplaats niet</h2>
       </div>
-      <p class="reveal-d1" data-reveal>
-        You wrote it down. Goals on the back of the team list, cards in the margin, saves
-        somewhere near the bottom. By Tuesday the paper is in a kit bag and the numbers are a
-        guess. Next season a new coach arrives and the record starts at zero again.
+      <p class="reveal-d1" data-reveal data-i18n="problem.p1">
+        Je schreef het op. Doelpunten achter op de opstelling, kaarten in de kantlijn, reddingen
+        ergens onderaan. Dinsdag zit het papier in een sporttas en zijn de cijfers een gok.
+        Volgend seizoen komt er een nieuwe coach en begint de administratie weer bij nul.
       </p>
-      <p class="reveal-d1" data-reveal style="margin-top:18px">
-        Handball-Tracker keeps it. One tap per event during the match, and the season is already
-        counted before you reach the car.
+      <p class="reveal-d1" data-reveal style="margin-top:18px" data-i18n="problem.p2">
+        Handball-Tracker bewaart het. Eén tik per gebeurtenis tijdens de wedstrijd, en het
+        seizoen is al opgeteld voordat je bij de auto bent.
       </p>
     </section>
 
@@ -120,22 +126,23 @@
       <span class="stamp">12:30</span>
       <div class="feat">
         <div class="feat-copy">
-          <h3 class="display d-2" data-reveal>One tap per event</h3>
-          <p class="reveal-d1" data-reveal>
-            Every player carries their own row. Goal, shot, assist, yellow, two minutes, red.
-            The clock runs, the event log fills, and the numbers on the left update while you
-            are still watching the next attack.
+          <h3 class="display d-2" data-reveal data-i18n="track.h3">Eén tik per gebeurtenis</h3>
+          <p class="reveal-d1" data-reveal data-i18n="track.p">
+            Elke speler heeft zijn eigen regel. Doelpunt, schot, assist, geel, twee minuten,
+            rood. De klok loopt, het gebeurtenissenlog vult zich, en de cijfers links lopen bij
+            terwijl je nog naar de volgende aanval kijkt.
           </p>
           <ul class="list reveal-d2" data-reveal>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Goalkeepers get save and stop tracking with their own save rate</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Shot placement by goal zone, so you can see where they beat you</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Two-minute suspensions count themselves down</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Undo on every action, because the hall is loud and thumbs are wide</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="track.li1">Keepers krijgen redding- en stopregistratie met hun eigen reddingspercentage</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="track.li2">Schotplaatsing per hoek van het doel, zodat je ziet waar ze je passeren</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="track.li3">Tijdstraffen tellen zichzelf af</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="track.li4">Ongedaan maken op elke actie, want de zaal is luid en duimen zijn breed</span></li>
           </ul>
         </div>
         <div class="shot bleed-r reveal-d2" data-reveal>
           <img src="img/3-goals.png" width="1280" height="720" loading="lazy" decoding="async"
-               alt="Match screen mid-game: a running clock, a 5 to 0 score, one row per player with goal, shot, assist and card buttons, and a minute-stamped event log down the right side.">
+               data-i18n-alt="track.alt"
+               alt="Wedstrijdscherm tijdens het spel: een lopende klok, een stand van 5 tegen 0, één regel per speler met knoppen voor doelpunt, schot, assist en kaart, en een gebeurtenissenlog met minuutstempel aan de rechterkant.">
         </div>
       </div>
     </section>
@@ -145,40 +152,42 @@
       <span class="stamp">23:40</span>
       <div class="feat feat-flip">
         <div class="feat-copy">
-          <h3 class="display d-2" data-reveal>Your squad is already loaded</h3>
-          <p class="reveal-d1" data-reveal>
-            Set the roster once. Numbers, positions, goalkeepers, bench. Save it and it comes
-            back for the next fixture, so the ten minutes before throw-off stay yours.
+          <h3 class="display d-2" data-reveal data-i18n="squad.h3">Je selectie staat al klaar</h3>
+          <p class="reveal-d1" data-reveal data-i18n="squad.p">
+            Stel de opstelling één keer in. Nummers, posities, keepers, bank. Sla het op en het
+            komt terug voor de volgende wedstrijd, zodat de tien minuten voor de beginworp van
+            jou blijven.
           </p>
           <ul class="list reveal-d2" data-reveal>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Saved rosters for every team you coach</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Paste a squad list in and it imports</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Substitutions tracked between court and bench</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="squad.li1">Opgeslagen opstellingen voor elk team dat je coacht</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="squad.li2">Plak een spelerslijst en die wordt geïmporteerd</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="squad.li3">Wissels bijgehouden tussen veld en bank</span></li>
           </ul>
         </div>
         <div class="shot reveal-d2" data-reveal>
           <img src="img/2-roster.png" width="1280" height="720" loading="lazy" decoding="async"
-               alt="Roster setup screen listing players with shirt numbers and positions, goalkeepers grouped separately from field players.">
+               data-i18n-alt="squad.alt"
+               alt="Scherm voor het instellen van de opstelling, met spelers, rugnummers en posities, en keepers apart van de veldspelers.">
         </div>
       </div>
     </section>
 
     <!-- ---------------------------------------------------- demo -->
     <section class="sec" id="demo">
-      <span class="stamp">HT &middot; HALFTIME</span>
+      <span class="stamp" data-i18n-html="demo.stamp">RUST</span>
       <div class="sec-head">
-        <h2 class="display d-1" data-reveal>See it run</h2>
-        <p class="reveal-d1" data-reveal>
-          Two minutes, no narration. Sign in, build the roster, track a few goals, go live, save
-          the match, read the season.
+        <h2 class="display d-1" data-reveal data-i18n="demo.h2">Zie het werken</h2>
+        <p class="reveal-d1" data-reveal data-i18n="demo.p">
+          Twee minuten, geen commentaar. Inloggen, de opstelling maken, een paar doelpunten
+          registreren, live gaan, de wedstrijd opslaan, het seizoen lezen.
         </p>
       </div>
       <div class="video-wrap reveal-d2" data-reveal>
         <video controls preload="none" poster="img/3-goals.png"
-               aria-label="Silent walkthrough of Handball-Tracker, from sign in to season statistics">
+               data-i18n-aria="demo.videoAria"
+               aria-label="Stille rondleiding door Handball-Tracker, van inloggen tot seizoensstatistieken">
           <source src="img/demo.webm" type="video/webm">
-          Your browser cannot play this video. The walkthrough covers sign in, roster setup,
-          live goal tracking, broadcasting, saving a match and reading season statistics.
+          <span data-i18n="demo.videoFallback">Je browser kan deze video niet afspelen. De rondleiding behandelt inloggen, het instellen van de opstelling, live doelpunten bijhouden, uitzenden, een wedstrijd opslaan en seizoensstatistieken lezen.</span>
         </video>
       </div>
     </section>
@@ -188,21 +197,23 @@
       <span class="stamp">38:00</span>
       <div class="feat">
         <div class="feat-copy">
-          <h3 class="display d-2" data-reveal>For everyone who could not get there</h3>
-          <p class="reveal-d1" data-reveal>
-            Put the match on a link. Parents at work, players who are injured, the away
-            supporters who did not travel: they open one page and watch the score and the event
-            log update as you tap. No account, no app, no login wall.
+          <h3 class="display d-2" data-reveal data-i18n="live.h3">Voor iedereen die er niet bij kon zijn</h3>
+          <p class="reveal-d1" data-reveal data-i18n="live.p">
+            Zet de wedstrijd op een link. Ouders op het werk, geblesseerde spelers, de
+            uitsupporters die niet meereisden: ze openen één pagina en zien de stand en het
+            gebeurtenissenlog bijwerken terwijl jij tikt. Geen account, geen app, geen
+            inlogscherm.
           </p>
           <ul class="list reveal-d2" data-reveal>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Share one link, watched on any number of screens</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Score, clock and events follow the match live</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Stop broadcasting whenever you want</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="live.li1">Deel één link, te volgen op een onbeperkt aantal schermen</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="live.li2">Stand, klok en gebeurtenissen volgen de wedstrijd live</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="live.li3">Stop met uitzenden wanneer je wilt</span></li>
           </ul>
         </div>
         <div class="shot bleed-r reveal-d2" data-reveal>
           <img src="img/4b-livepage.png" width="1280" height="720" loading="lazy" decoding="async"
-               alt="Public live page showing the current score and a running list of match events, viewed by a follower with no account.">
+               data-i18n-alt="live.alt"
+               alt="Openbare live-pagina met de huidige stand en een doorlopende lijst van wedstrijdgebeurtenissen, bekeken door een volger zonder account.">
         </div>
       </div>
     </section>
@@ -212,96 +223,98 @@
       <span class="stamp">51:20</span>
       <div class="feat feat-flip">
         <div class="feat-copy">
-          <h3 class="display d-2" data-reveal>The season adds itself up</h3>
-          <p class="reveal-d1" data-reveal>
-            Every saved match rolls into the season. Top scorers, save percentages, cards, shot
-            efficiency. When someone asks who is actually converting, the answer is a page, not
-            an argument.
+          <h3 class="display d-2" data-reveal data-i18n="stats.h3">Het seizoen telt zichzelf op</h3>
+          <p class="reveal-d1" data-reveal data-i18n="stats.p">
+            Elke opgeslagen wedstrijd telt mee in het seizoen. Topscorers, reddingspercentages,
+            kaarten, schotrendement. Als iemand vraagt wie er eigenlijk scoort, is het antwoord
+            een pagina, geen discussie.
           </p>
           <ul class="list reveal-d2" data-reveal>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Separate seasons, so last year stays last year</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Full match history, every event kept</li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Export to Excel when the club wants its own copy</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="stats.li1">Aparte seizoenen, zodat vorig jaar vorig jaar blijft</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="stats.li2">Volledige wedstrijdhistorie, elke gebeurtenis bewaard</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="stats.li3">Exporteer naar Excel als de vereniging een eigen kopie wil</span></li>
           </ul>
         </div>
         <div class="shot reveal-d2" data-reveal>
           <img src="img/6-stats.png" width="1280" height="720" loading="lazy" decoding="async"
-               alt="Season statistics page with a top scorers table, goalkeeper stop percentage and a most cards panel.">
+               data-i18n-alt="stats.alt"
+               alt="Pagina met seizoensstatistieken, met een tabel van topscorers, keeperstoppercentage en een paneel met de meeste kaarten.">
         </div>
       </div>
     </section>
 
     <!-- ------------------------------------------------ fulltime -->
     <section class="sec" id="fulltime">
-      <span class="stamp">FT &middot; FULL TIME</span>
+      <span class="stamp" data-i18n-html="close.stamp">EINDE</span>
 
       <div class="closing">
-        <h2 class="display d-1" data-reveal>Track your next match</h2>
-        <p class="lede reveal-d1" data-reveal style="margin-top:20px">
-          Ask for a code, bring one team, and see whether it survives a real Saturday. If it
-          does, the rest of the club can follow.
+        <h2 class="display d-1" data-reveal data-i18n="close.h2">Registreer je volgende wedstrijd</h2>
+        <p class="lede reveal-d1" data-reveal style="margin-top:20px" data-i18n="close.lede">
+          Vraag een code aan, neem één team mee, en kijk of het een echte zaterdag doorstaat.
+          Zo ja, dan kan de rest van de vereniging volgen.
         </p>
         <div class="hero-cta reveal-d2" data-reveal>
-          <a class="btn btn-primary btn-lg" href="https://app.handball-tracker.com/?request=access">Request access</a>
-          <a class="btn btn-ghost btn-lg" href="pricing.html">See what is included</a>
+          <a class="btn btn-primary btn-lg" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
+          <a class="btn btn-ghost btn-lg" href="pricing.html" data-i18n="close.see">Bekijk wat erbij zit</a>
         </div>
       </div>
 
-      <h2 class="display d-2" data-reveal style="margin-top:96px;margin-bottom:28px">Questions</h2>
+      <h2 class="display d-2" data-reveal style="margin-top:96px;margin-bottom:28px" data-i18n="faq.h2">Vragen</h2>
       <div class="faq">
         <details class="faq-item">
           <summary class="faq-q">
-            Do I need an invite code?
+            <span data-i18n="faq.q1">Heb ik een uitnodigingscode nodig?</span>
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-            <p>Yes. Accounts are created with an invite code while the product is in early
-            access. If your club already uses it, ask whoever set it up. If not, use Request
-            access above and a personal code comes back within 24 hours.</p>
+            <p data-i18n="faq.a1">Ja. Accounts worden aangemaakt met een uitnodigingscode zolang het product in
+            vroege toegang is. Gebruikt je vereniging het al, vraag het dan aan wie het heeft
+            ingesteld. Zo niet, gebruik dan hierboven Toegang aanvragen en je krijgt binnen 24
+            uur een persoonlijke code.</p>
           </div>
         </details>
         <details class="faq-item">
           <summary class="faq-q">
-            What do I run it on during a match?
+            <span data-i18n="faq.q2">Waarop gebruik ik het tijdens een wedstrijd?</span>
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-            <p>A browser. Phone, tablet or laptop, whatever you already carry. A tablet gives
-            you the biggest buttons, which matters more than you would think at 3 to 3 with
-            four minutes left. There is nothing to install and no app store.</p>
+            <p data-i18n="faq.a2">Een browser. Telefoon, tablet of laptop, wat je al bij je hebt. Een tablet geeft
+            je de grootste knoppen, wat meer uitmaakt dan je denkt bij 3-3 met nog vier minuten
+            te gaan. Er is niets te installeren en geen app-store.</p>
           </div>
         </details>
         <details class="faq-item">
           <summary class="faq-q">
-            Can more than one person track the same match?
+            <span data-i18n="faq.q3">Kunnen meerdere mensen dezelfde wedstrijd bijhouden?</span>
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-            <p>Your matches sync across your own devices, so you can start on a phone and
-            finish on a tablet. Followers watching the live link see the match update but
-            cannot change anything.</p>
+            <p data-i18n="faq.a3">Je wedstrijden synchroniseren tussen je eigen apparaten, dus je kunt op een
+            telefoon beginnen en op een tablet afmaken. Volgers die de live-link bekijken zien
+            de wedstrijd bijwerken, maar kunnen niets wijzigen.</p>
           </div>
         </details>
         <details class="faq-item">
           <summary class="faq-q">
-            Who owns the data?
+            <span data-i18n="faq.q4">Van wie zijn de gegevens?</span>
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-            <p>You do. Every match and season can be exported to Excel at any time, so the
-            club keeps its own copy of its own history regardless of what happens to any
-            subscription.</p>
+            <p data-i18n="faq.a4">Van jou. Elke wedstrijd en elk seizoen kun je op elk moment naar Excel
+            exporteren, zodat de vereniging haar eigen historie in eigen beheer houdt, wat er
+            ook met een abonnement gebeurt.</p>
           </div>
         </details>
         <details class="faq-item">
           <summary class="faq-q">
-            Is it only for handball?
+            <span data-i18n="faq.q5">Is het alleen voor handbal?</span>
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-            <p>Only handball. Two-minute suspensions, seven metre throws, goalkeeper stop
-            percentage and attack counts are built into the way it works, not bolted onto a
-            generic sports tracker.</p>
+            <p data-i18n="faq.a5">Alleen handbal. Tijdstraffen, zevenmeterworpen, keeperstoppercentage en het
+            tellen van aanvallen zitten in de manier waarop het werkt, niet als toevoeging op
+            een algemene sporttracker.</p>
           </div>
         </details>
       </div>
@@ -318,14 +331,15 @@
       <span class="brand-word">Handball-Tracker</span>
     </a>
     <ul class="footer-links">
-      <li><a href="pricing.html">Plans</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="https://app.handball-tracker.com/">Sign in</a></li>
-      <li><a href="mailto:info@handball-tracker.com">Contact</a></li>
+      <li><a href="pricing.html" data-i18n="foot.plans">Prijzen</a></li>
+      <li><a href="privacy.html" data-i18n="foot.privacy">Privacy</a></li>
+      <li><a href="https://app.handball-tracker.com/" data-i18n="foot.signin">Inloggen</a></li>
+      <li><a href="mailto:info@handball-tracker.com" data-i18n="foot.contact">Contact</a></li>
     </ul>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="site.js"></script>
 </body>
 </html>
