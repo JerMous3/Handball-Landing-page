@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-21T21:00:00Z",
+  "title": "Design System: Handball-Tracker",
+  "extensions": {
+    "colorMeta": {
+      "volt": {
+        "role": "primary",
+        "displayName": "Volt",
+        "canonical": "oklch(0.945 0.229 118)",
+        "tonalRamp": ["oklch(0.30 0.10 118)", "oklch(0.42 0.14 118)", "oklch(0.54 0.17 118)", "oklch(0.66 0.20 118)", "oklch(0.78 0.22 118)", "oklch(0.88 0.23 118)", "oklch(0.945 0.229 118)", "oklch(0.97 0.15 118)"]
+      },
+      "ink-900": {
+        "role": "neutral",
+        "displayName": "Ink 900 / Page Canvas",
+        "canonical": "oklch(0.145 0.012 265)",
+        "tonalRamp": ["oklch(0.145 0.012 265)", "oklch(0.185 0.013 265)", "oklch(0.225 0.014 265)", "oklch(0.285 0.016 265)", "oklch(0.42 0.018 262)", "oklch(0.625 0.021 258)", "oklch(0.755 0.018 258)", "oklch(0.955 0.004 258)"]
+      },
+      "ink-850": {
+        "role": "neutral",
+        "displayName": "Ink 850 / Raised Surface",
+        "canonical": "oklch(0.185 0.013 265)"
+      },
+      "ink-800": {
+        "role": "neutral",
+        "displayName": "Ink 800 / Inset",
+        "canonical": "oklch(0.225 0.014 265)"
+      },
+      "ink-700": {
+        "role": "neutral",
+        "displayName": "Ink 700 / Hairline",
+        "canonical": "oklch(0.285 0.016 265)"
+      },
+      "text-1": {
+        "role": "neutral",
+        "displayName": "Text 1 / Primary",
+        "canonical": "oklch(0.955 0.004 258)"
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Text 2 / Body",
+        "canonical": "oklch(0.755 0.018 258)"
+      },
+      "text-3": {
+        "role": "neutral",
+        "displayName": "Text 3 / Faint",
+        "canonical": "oklch(0.625 0.021 258)"
+      },
+      "ev-goal": { "role": "signal", "displayName": "Event / Goal", "canonical": "#00e87a" },
+      "ev-save": { "role": "signal", "displayName": "Event / Save", "canonical": "#7b5cfa" },
+      "ev-shot": { "role": "signal", "displayName": "Event / Shot", "canonical": "#00d4ff" },
+      "ev-card": { "role": "signal", "displayName": "Event / Card", "canonical": "#ffc700" },
+      "ev-red": { "role": "signal", "displayName": "Event / Red", "canonical": "#ff3b3b" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only (Bebas Neue), capped at 12ch." },
+      "headline": { "displayName": "Headline", "purpose": "Major section openers (.d-1)." },
+      "title": { "displayName": "Title", "purpose": "Feature sub-heads (.d-2) and plan names." },
+      "body": { "displayName": "Body", "purpose": "Manrope running copy, measure capped at 60ch." },
+      "label": { "displayName": "Label", "purpose": "Rail timestamps, stamps, table headers; uppercase tracked." }
+    },
+    "shadows": [
+      { "name": "board-lift", "value": "0 24px 64px rgb(0 0 0 / 0.45)", "purpose": "The hero scoreboard, the one element presented as a floating device." },
+      { "name": "screenshot-lift", "value": "0 22px 56px rgb(0 0 0 / 0.4)", "purpose": "Product screenshot frames (.shot), which may also bleed past the content edge." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The one easing curve. Exponential ease-out, no bounce, no elastic." },
+      { "name": "dur-fast", "value": "160ms", "purpose": "Micro-interactions: button hover, link color, focus." },
+      { "name": "dur-base", "value": "240ms", "purpose": "State changes: nav border, FAQ open, rail marker." },
+      { "name": "dur-slow", "value": "560ms", "purpose": "Section scroll reveals (fade and rise, fired once)." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "479px" },
+      { "name": "sm", "value": "559px" },
+      { "name": "nav", "value": "860px" },
+      { "name": "md", "value": "980px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "hero", "value": "1100px" },
+      { "name": "bleed", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single loudest thing on any page. Volt on ink, reserved for the trial call to action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Request access</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:54px; padding:0 28px; border-radius:10px; background:#e8ff00; color:#0a0c10; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; font-weight:700; font-size:1.04rem; text-decoration:none; white-space:nowrap; cursor:pointer; border:none; transition:transform 160ms cubic-bezier(0.16,1,0.3,1), background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background:#f2ff4d; } .ds-btn-primary:active { transform:translateY(1px); } .ds-btn-primary:focus-visible { outline:2px solid #e8ff00; outline-offset:3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The secondary, never-yellow action: a hairline outline that fills on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Watch the demo</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:54px; padding:0 28px; border-radius:10px; background:transparent; color:#f0f2f6; border:1px solid #252b38; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; font-weight:700; font-size:1.04rem; text-decoration:none; white-space:nowrap; cursor:pointer; transition:border-color 160ms cubic-bezier(0.16,1,0.3,1), background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color:#7d8798; background:#12151c; } .ds-btn-ghost:focus-visible { outline:2px solid #e8ff00; outline-offset:3px; }"
+    },
+    {
+      "name": "Live Scoreboard",
+      "kind": "custom",
+      "refersTo": "board",
+      "description": "The hero's self-demonstration: a floating device with a running clock, score, minute-stamped event log, and a pulsing recording foot.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-board-top\"><div><div class=\"ds-board-half\">1ST HALF</div><div class=\"ds-board-clock\">18:24</div></div><div class=\"ds-board-score\"><div class=\"t\">HV HELIOS &middot; HC TORNADO</div><div class=\"n\">7 &ndash; 5</div></div></div><ul class=\"ds-board-log\"><li class=\"ds-log-row\"><span class=\"t\">18:24</span><span class=\"dot\" style=\"background:#00e87a\"></span><span class=\"who\">#7 Sanne</span><span class=\"what\">Goal</span></li><li class=\"ds-log-row\"><span class=\"t\">17:58</span><span class=\"dot\" style=\"background:#7b5cfa\"></span><span class=\"who\">#1 Keeper</span><span class=\"what\">Save</span></li><li class=\"ds-log-row\"><span class=\"t\">17:31</span><span class=\"dot\" style=\"background:#ffc700\"></span><span class=\"who\">#4 Mila</span><span class=\"what\">2 min</span></li></ul><div class=\"ds-board-foot\"><span class=\"ds-pulse\"></span><span>Recording</span></div></div>",
+      "css": ".ds-board { background:#12151c; border:1px solid #252b38; border-radius:14px; padding:20px; box-shadow:0 24px 64px rgb(0 0 0 / 0.45); font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; max-width:380px; } .ds-board-top { display:flex; align-items:center; gap:14px; padding-bottom:18px; border-bottom:1px solid #252b38; } .ds-board-half { font-size:0.68rem; font-weight:700; letter-spacing:0.1em; color:#7d8798; } .ds-board-clock { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:2.7rem; line-height:1; color:#e8ff00; padding-top:4px; font-variant-numeric:tabular-nums; } .ds-board-score { margin-left:auto; text-align:right; } .ds-board-score .t { font-size:0.68rem; font-weight:700; letter-spacing:0.08em; color:#7d8798; } .ds-board-score .n { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:2.7rem; line-height:1; color:#f0f2f6; padding-top:4px; font-variant-numeric:tabular-nums; } .ds-board-log { list-style:none; margin:16px 0 0; padding:0; display:grid; gap:2px; } .ds-log-row { display:flex; align-items:center; gap:12px; padding:9px 10px; border-radius:6px; font-size:0.92rem; } .ds-log-row .t { font-size:0.8rem; font-weight:600; color:#7d8798; min-width:42px; font-variant-numeric:tabular-nums; } .ds-log-row .dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; } .ds-log-row .who { font-weight:600; color:#f0f2f6; } .ds-log-row .what { margin-left:auto; font-size:0.83rem; color:#a7b0be; } .ds-board-foot { margin-top:14px; padding-top:14px; border-top:1px solid #252b38; display:flex; align-items:center; gap:8px; font-size:0.78rem; color:#7d8798; } .ds-pulse { width:7px; height:7px; border-radius:50%; background:#00e87a; animation:dsPulse 2s ease-in-out infinite; } @keyframes dsPulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }"
+    },
+    {
+      "name": "Timeline Rail",
+      "kind": "nav",
+      "refersTo": "rail",
+      "description": "The site's structural signature: a hairline of match timestamps. Active marker is volt with a scaled dot; the only place repeating tracked labels are allowed.",
+      "html": "<nav class=\"ds-rail\"><ul><li data-passed>00:00</li><li data-passed>04:15</li><li data-active>12:30</li><li>HT</li><li>38:00</li><li>FT</li></ul></nav>",
+      "css": ".ds-rail { position:relative; padding:8px 0 8px 22px; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; } .ds-rail::before { content:''; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:#252b38; } .ds-rail ul { list-style:none; margin:0; padding:0; display:grid; gap:22px; } .ds-rail li { position:relative; font-size:0.76rem; font-weight:600; letter-spacing:0.06em; color:#7d8798; font-variant-numeric:tabular-nums; } .ds-rail li::before { content:''; position:absolute; left:-20px; top:5px; width:7px; height:7px; border-radius:50%; background:#252b38; transition:background-color 240ms cubic-bezier(0.16,1,0.3,1), transform 240ms cubic-bezier(0.16,1,0.3,1); } .ds-rail li[data-passed] { color:#a7b0be; } .ds-rail li[data-passed]::before { background:#7d8798; } .ds-rail li[data-active] { color:#e8ff00; } .ds-rail li[data-active]::before { background:#e8ff00; transform:scale(1.4); }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq",
+      "description": "Native <details>/<summary>. Opens with JS off; the plus icon rotates 45deg to a close. Never rebuild as buttons with aria-expanded.",
+      "html": "<div class=\"ds-faq\"><details open><summary><span>Do I need an invite code?</span><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><path d=\"M10 4v12M4 10h12\"/></svg></summary><p class=\"a\">Yes. Accounts are created with an invite code while the product is in early access. Use Request access and a personal code comes back within 24 hours.</p></details><details><summary><span>What do I run it on during a match?</span><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"><path d=\"M10 4v12M4 10h12\"/></svg></summary><p class=\"a\">A browser. Phone, tablet or laptop, whatever you already carry.</p></details></div>",
+      "css": ".ds-faq { max-width:820px; border-top:1px solid #252b38; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; } .ds-faq details { border-bottom:1px solid #252b38; } .ds-faq summary { display:flex; align-items:center; gap:20px; padding:22px 0; list-style:none; font-size:1.04rem; font-weight:600; color:#f0f2f6; cursor:pointer; } .ds-faq summary::-webkit-details-marker { display:none; } .ds-faq summary svg { margin-left:auto; width:18px; height:18px; flex-shrink:0; color:#7d8798; transition:transform 240ms cubic-bezier(0.16,1,0.3,1); } .ds-faq details[open] summary svg { transform:rotate(45deg); } .ds-faq .a { padding:0 0 24px; margin:0; font-size:0.97rem; color:#a7b0be; max-width:60ch; }"
+    },
+    {
+      "name": "Language Toggle",
+      "kind": "custom",
+      "refersTo": "lang-active",
+      "description": "A neutral pill group. The active language is a white pill on ink text, deliberately not volt, so yellow stays reserved for the call to action.",
+      "html": "<div class=\"ds-lang\"><button aria-pressed=\"false\">NL</button><button aria-pressed=\"true\">EN</button></div>",
+      "css": ".ds-lang { display:inline-flex; align-items:center; gap:2px; padding:3px; border:1px solid #252b38; border-radius:10px; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; } .ds-lang button { min-height:30px; padding:0 9px; border-radius:7px; font-size:0.8rem; font-weight:700; letter-spacing:0.02em; color:#7d8798; background:none; border:none; cursor:pointer; transition:color 160ms cubic-bezier(0.16,1,0.3,1), background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-lang button:hover { color:#f0f2f6; } .ds-lang button[aria-pressed=\"true\"] { color:#0a0c10; background:#f0f2f6; } .ds-lang button:focus-visible { outline:2px solid #e8ff00; outline-offset:3px; }"
+    },
+    {
+      "name": "Feature List Item",
+      "kind": "custom",
+      "refersTo": "list",
+      "description": "A checklist row: a single-stroke currentColor tick in faint ink beside a body-2 claim. Icons are always inline SVG, never emoji.",
+      "html": "<ul class=\"ds-list\"><li><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 10.5l4 4 8-9\"/></svg><span>Goalkeepers get save tracking with their own save rate</span></li><li><svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M4 10.5l4 4 8-9\"/></svg><span>Shot placement by goal zone, so you see where they beat you</span></li></ul>",
+      "css": ".ds-list { list-style:none; margin:0; padding:0; display:grid; gap:12px; max-width:60ch; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; } .ds-list li { display:flex; gap:11px; align-items:flex-start; font-size:0.97rem; color:#a7b0be; } .ds-list svg { width:17px; height:17px; flex-shrink:0; margin-top:4px; color:#7d8798; }"
+    },
+    {
+      "name": "Pricing Plan Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Raised ink-850 card with a Bebas name and price. Both plans share identical chrome; emphasis comes from the button alone.",
+      "html": "<div class=\"ds-plan\"><div class=\"ds-plan-name\">Personal</div><div class=\"ds-plan-for\">One coach, one team. You track your own matches and keep your own season.</div><div class=\"ds-plan-price\">Free trial</div><div class=\"ds-plan-note\">Then a personal subscription. Ask for the current rate.</div><a class=\"ds-plan-cta\" href=\"#\">Request access</a></div>",
+      "css": ".ds-plan { border:1px solid #252b38; border-radius:14px; padding:clamp(26px,3.4vw,38px); background:#12151c; display:flex; flex-direction:column; max-width:360px; font-family:'Manrope',ui-sans-serif,system-ui,sans-serif; } .ds-plan-name { font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:2.1rem; line-height:1; margin-bottom:10px; color:#f0f2f6; } .ds-plan-for { font-size:0.95rem; color:#a7b0be; } .ds-plan-price { margin:26px 0 4px; font-family:'Bebas Neue','Arial Narrow',sans-serif; font-size:2.4rem; line-height:1; color:#f0f2f6; } .ds-plan-note { font-size:0.86rem; color:#7d8798; } .ds-plan-cta { margin-top:28px; width:100%; display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:10px; background:#e8ff00; color:#0a0c10; font-weight:700; font-size:0.97rem; text-decoration:none; transition:background-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-plan-cta:hover { background:#f2ff4d; } .ds-plan-cta:focus-visible { outline:2px solid #e8ff00; outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sideline Instrument",
+    "overview": "This is not a brochure for a tool, it is the tool holding still. The site behaves like the app it sells: a live scoreboard that actually ticks in the hero, real product screenshots rather than illustrated abstractions, and numbers instead of adjectives. The voice is precise, unhurried, and sideline-literate: it speaks like a coach who knows the sport, not like a SaaS company that has heard of it. The surface is a tinted near-black carrying a single electric-yellow accent rationed to almost nothing, left-aligned and calm, organised against a minute-stamped timeline rail the way a coach records a game.",
+    "keyCharacteristics": [
+      "Tinted near-black canvas, blue-shifted, never pure #000 or #fff.",
+      "One accent (--volt yellow) rationed to under 10% of any screen.",
+      "Bebas Neue display over Manrope body; numbers always tabular.",
+      "A minute-stamped timeline rail as the load-bearing layout signature.",
+      "Bilingual: Dutch is the real page (in the HTML), English is layered on by i18n.js.",
+      "The product demonstrates itself: real screenshots, a real recording, a running clock."
+    ],
+    "rules": [
+      { "name": "The Yellow Budget Rule", "body": "--volt is permitted on exactly four things: the primary call to action, live numerals (clock and score), the active rail marker, and focus rings. A yellow heading, icon, or border is a bug. If everything is yellow, the trial button is not.", "section": "colors" },
+      { "name": "The No-Pure-Extremes Rule", "body": "#000 and #fff are forbidden. Darkest is #0a0c10, lightest is #f0f2f6, and every neutral is tinted toward blue.", "section": "colors" },
+      { "name": "The Semantic-Dot Rule", "body": "Event colors exist only as 6px log dots. The moment one becomes a background, heading, or border, it has left its lane.", "section": "colors" },
+      { "name": "The Tabular-Numeral Rule", "body": "Every numeral uses font-variant-numeric: tabular-nums. A clock that reflows while ticking is a defect.", "section": "typography" },
+      { "name": "The Bebas Floor Rule", "body": "Bebas Neue is reserved for 40px and above. Below 32px it reads cheap; never use it there.", "section": "typography" },
+      { "name": "The Uppercase Lane Rule", "body": "Uppercase is for the display face and short labels only, never body copy. Body line-height is 1.65 because light text on dark reads lighter than it measures.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are separated by tone (ink-850 on ink-900) and 1px ink-700 hairlines, not shadows. A drop shadow appears only on the scoreboard and screenshots.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep --volt (#e8ff00) to the four budgeted uses: primary call to action, live numerals, active rail marker, focus rings.",
+      "Do tint every neutral toward blue (hue ~258-265); darkest surface #0a0c10, lightest text #f0f2f6.",
+      "Do set all numerals in tabular-nums, and reserve Bebas Neue for 40px and up.",
+      "Do separate surfaces with tone and 1px ink-700 hairlines; use a shadow only on the scoreboard and screenshots.",
+      "Do show the product itself: real screenshots and the real recording, never illustrated abstractions.",
+      "Do state what the product does and let numbers be the voice. Speak sideline-literate.",
+      "Do edit copy in both places: the Dutch in the HTML and the matching English in i18n.js.",
+      "Do let the timeline rail be the only home for repeating small tracked labels.",
+      "Do keep the reveal class script-applied, the FAQ native <details>, and the hero simulation paused off-screen; these are robustness, not style."
+    ],
+    "donts": [
+      "Don't ship generic sports-tech neon: dark plus glowing green plus a stadium photo plus 'ELEVATE YOUR GAME'.",
+      "Don't build enterprise analytics SaaS: no gradient-mesh hero, no three identical icon cards, no logo wall of clubs we do not have.",
+      "Don't drift into editorial-typographic minimalism or fitness-app maximalism.",
+      "Don't use breathless verbs: no revolutionise, unleash, game-changing, supercharge.",
+      "Don't invent social proof: no fabricated testimonials, club logos, user counts, or undecided prices. Empty is better than false.",
+      "Don't use #000, #fff, a yellow heading/icon/border, or an event color as anything but a 6px log dot.",
+      "Don't use side-stripe borders, gradient text, glassmorphism, a hero-metric block, or emoji as icons.",
+      "Don't use em dashes in copy. Use commas, colons, semicolons, periods, or parentheses.",
+      "Don't commit a recoloured Logo.png; the mark is recoloured in CSS so one file stays the source of truth."
+    ]
+  }
+}
