@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl"
+      data-title-en="Plans | Handball-Tracker"
+      data-desc-en="Start on a free trial with one team. Personal access for a single coach, or a club plan covering every team. Pricing is being finalised, so ask and we will give you a number.">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plans | Handball-Tracker</title>
-<meta name="description" content="Start on a free trial with one team. Personal access for a single coach, or a club plan covering every team. Pricing is being finalised, so ask and we will give you a number.">
+<title>Prijzen | Handball-Tracker</title>
+<meta name="description" content="Begin met een proefperiode met één team. Persoonlijke toegang voor één coach, of een verenigingsplan voor elk team. De prijzen worden nog vastgesteld, dus vraag ernaar en je krijgt een bedrag.">
 
 <link rel="icon" href="favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="favicon-180.png">
@@ -15,7 +17,7 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="skip">Naar de inhoud</a>
 
 <header class="nav" id="nav">
   <div class="shell nav-inner">
@@ -24,12 +26,16 @@
       <span class="brand-word">Handball-Tracker</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#tracking">Tracking</a></li>
-      <li><a href="index.html#live">Live</a></li>
-      <li><a href="index.html#stats">Statistics</a></li>
-      <li><a href="pricing.html" aria-current="page">Plans</a></li>
+      <li><a href="index.html#tracking" data-i18n="nav.tracking">Bijhouden</a></li>
+      <li><a href="index.html#live" data-i18n="nav.live">Live</a></li>
+      <li><a href="index.html#stats" data-i18n="nav.stats">Statistieken</a></li>
+      <li><a href="pricing.html" aria-current="page" data-i18n="nav.plans">Prijzen</a></li>
     </ul>
-    <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access">Request access</a>
+    <div class="lang-switch" role="group" aria-label="Taal kiezen / Choose language">
+      <button type="button" class="lang-btn" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
   </div>
 </header>
 
@@ -37,11 +43,12 @@
 <div class="shell">
 
   <section class="hero">
-    <h1 class="display d-1" data-reveal style="max-width:16ch">Start with one team. Add the rest when it earns it.</h1>
-    <p class="lede reveal-d1" data-reveal style="margin-top:24px">
-      Every account begins on a trial so you can put it through a real Saturday before anyone
-      pays anything. We are still setting final pricing, so rather than publish a number we
-      have not committed to, tell us what you need and we will give you one.
+    <h1 class="display d-1" data-reveal style="max-width:16ch" data-i18n="pr.h1">Begin met één team. Voeg de rest toe als het zich bewijst.</h1>
+    <p class="lede reveal-d1" data-reveal style="margin-top:24px" data-i18n="pr.lede">
+      Elk account begint met een proefperiode, zodat je het op een echte zaterdag kunt testen
+      voordat iemand betaalt. We stellen de definitieve prijzen nog vast, dus in plaats van een
+      bedrag te publiceren waar we ons niet aan hebben gebonden, vertel je ons wat je nodig hebt
+      en geven wij je er een.
     </p>
   </section>
 
@@ -49,33 +56,33 @@
     <div class="plans">
 
       <article class="plan" data-reveal>
-        <h2 class="plan-name">Personal</h2>
-        <p class="plan-for">One coach, one team. You track your own matches and keep your own season.</p>
-        <p class="plan-price display">Free trial</p>
-        <p class="plan-price-note">Then a personal subscription. Ask for the current rate.</p>
+        <h2 class="plan-name" data-i18n="pr.personal.name">Persoonlijk</h2>
+        <p class="plan-for" data-i18n="pr.personal.for">Eén coach, één team. Je houdt je eigen wedstrijden bij en beheert je eigen seizoen.</p>
+        <p class="plan-price display" data-i18n="pr.personal.price">Gratis proefperiode</p>
+        <p class="plan-price-note" data-i18n="pr.personal.note">Daarna een persoonlijk abonnement. Vraag naar het huidige tarief.</p>
         <ul class="list">
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Full live match tracking</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Live broadcast link for followers</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Season statistics and match history</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Saved rosters and squad import</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Excel export of everything you record</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.personal.li1">Volledige live wedstrijdregistratie</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.personal.li2">Live uitzendlink voor volgers</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.personal.li3">Seizoensstatistieken en wedstrijdhistorie</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.personal.li4">Opgeslagen opstellingen en spelersimport</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.personal.li5">Excel-export van alles wat je vastlegt</span></li>
         </ul>
-        <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access">Request access</a>
+        <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
       </article>
 
       <article class="plan reveal-d1" data-reveal>
-        <h2 class="plan-name">Club</h2>
-        <p class="plan-for">Several teams under one roof, with a record that outlasts any one coach.</p>
-        <p class="plan-price display">By arrangement</p>
-        <p class="plan-price-note">Depends on how many teams you bring. Ask and we will give you a number.</p>
+        <h2 class="plan-name" data-i18n="pr.club.name">Vereniging</h2>
+        <p class="plan-for" data-i18n="pr.club.for">Meerdere teams onder één dak, met een administratie die elke coach overleeft.</p>
+        <p class="plan-price display" data-i18n="pr.club.price">In overleg</p>
+        <p class="plan-price-note" data-i18n="pr.club.note">Hangt af van het aantal teams dat je meeneemt. Vraag ernaar en we geven je een bedrag.</p>
         <ul class="list">
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Everything in Personal</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>An account for every coach in the club</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>One club invite code, so new coaches join themselves</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Seasons kept per team, across every side you enter</li>
-          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Help getting the first teams set up</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.club.li1">Alles uit Persoonlijk</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.club.li2">Een account voor elke coach in de vereniging</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.club.li3">Eén verenigingscode, zodat nieuwe coaches zichzelf aanmelden</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.club.li4">Seizoenen per team bewaard, over elk team dat je invoert</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="pr.club.li5">Hulp bij het opzetten van de eerste teams</span></li>
         </ul>
-        <a class="btn btn-ghost" href="mailto:info@handball-tracker.com?subject=Handball-Tracker%20club%20plan">Talk about a club plan</a>
+        <a class="btn btn-ghost" href="mailto:info@handball-tracker.com?subject=Handball-Tracker%20verenigingsplan" data-i18n="pr.club.cta">Praat over een verenigingsplan</a>
       </article>
 
     </div>
@@ -83,27 +90,27 @@
 
   <section class="sec">
     <div class="sec-head">
-      <h2 class="display d-2" data-reveal>Side by side</h2>
+      <h2 class="display d-2" data-reveal data-i18n="pr.cmp.h2">Naast elkaar</h2>
     </div>
     <div class="compare-scroll reveal-d1" data-reveal>
       <table class="compare">
-        <caption>What each plan covers. Anything not listed is included in both.</caption>
+        <caption data-i18n="pr.cmp.caption">Wat elk plan dekt. Alles wat niet vermeld staat, zit in beide.</caption>
         <thead>
           <tr>
-            <th scope="col">Feature</th>
-            <th scope="col">Personal</th>
-            <th scope="col">Club</th>
+            <th scope="col" data-i18n="pr.cmp.feature">Functie</th>
+            <th scope="col" data-i18n="pr.personal.name">Persoonlijk</th>
+            <th scope="col" data-i18n="pr.club.name">Vereniging</th>
           </tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Live match tracking</th><td class="yes">Included</td><td class="yes">Included</td></tr>
-          <tr><th scope="row">Live broadcast link</th><td class="yes">Included</td><td class="yes">Included</td></tr>
-          <tr><th scope="row">Season statistics</th><td class="yes">Included</td><td class="yes">Included</td></tr>
-          <tr><th scope="row">Match history</th><td class="yes">Included</td><td class="yes">Included</td></tr>
-          <tr><th scope="row">Excel export</th><td class="yes">Included</td><td class="yes">Included</td></tr>
-          <tr><th scope="row">Coach accounts</th><td>One</td><td class="yes">One per coach</td></tr>
-          <tr><th scope="row">Invite code</th><td>Personal, single use</td><td class="yes">Club wide</td></tr>
-          <tr><th scope="row">Setup help</th><td>By email</td><td class="yes">Hands on</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r1">Live wedstrijdregistratie</th><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r2">Live uitzendlink</th><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r3">Seizoensstatistieken</th><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r4">Wedstrijdhistorie</th><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r5">Excel-export</th><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td><td class="yes" data-i18n="pr.cmp.included">Inbegrepen</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r6">Coach-accounts</th><td data-i18n="pr.cmp.one">Eén</td><td class="yes" data-i18n="pr.cmp.perCoach">Eén per coach</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r7">Uitnodigingscode</th><td data-i18n="pr.cmp.single">Persoonlijk, eenmalig</td><td class="yes" data-i18n="pr.cmp.clubwide">Verenigingsbreed</td></tr>
+          <tr><th scope="row" data-i18n="pr.cmp.r8">Hulp bij opzetten</th><td data-i18n="pr.cmp.byemail">Via e-mail</td><td class="yes" data-i18n="pr.cmp.handson">Persoonlijk begeleid</td></tr>
         </tbody>
       </table>
     </div>
@@ -111,63 +118,63 @@
 
   <section class="sec">
     <div class="sec-head">
-      <h2 class="display d-2" data-reveal>Before you ask</h2>
+      <h2 class="display d-2" data-reveal data-i18n="pr.faq.h2">Voordat je het vraagt</h2>
     </div>
     <div class="faq reveal-d1" data-reveal>
       <details class="faq-item">
           <summary class="faq-q">
-          What does the free trial include?
+          <span data-i18n="pr.faq.q1">Wat zit er in de gratis proefperiode?</span>
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-          <p>The whole product. Track real matches, broadcast them, save them, read the season.
-          Trial accounts are capped by the number of sign ins rather than crippled by feature,
-          because a tracker you cannot fully use tells you nothing.</p>
+          <p data-i18n="pr.faq.a1">Het hele product. Echte wedstrijden bijhouden, uitzenden, opslaan, het seizoen
+          lezen. Proefaccounts zijn begrensd op het aantal aanmeldingen in plaats van uitgekleed
+          in functies, want een tracker die je niet volledig kunt gebruiken zegt je niets.</p>
           </div>
         </details>
       <details class="faq-item">
           <summary class="faq-q">
-          Why are there no prices on this page?
+          <span data-i18n="pr.faq.q2">Waarom staan er geen prijzen op deze pagina?</span>
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-          <p>Because they are not final yet, and publishing a number we might change is worse
-          than asking you to send one message. Email us and you will get the current rate the
-          same way an existing customer would.</p>
+          <p data-i18n="pr.faq.a2">Omdat ze nog niet definitief zijn, en een bedrag publiceren dat we misschien
+          wijzigen is erger dan je vragen één bericht te sturen. Mail ons en je krijgt het
+          huidige tarief, net als een bestaande klant.</p>
           </div>
         </details>
       <details class="faq-item">
           <summary class="faq-q">
-          What happens to our data if we stop paying?
+          <span data-i18n="pr.faq.q3">Wat gebeurt er met onze gegevens als we stoppen met betalen?</span>
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-          <p>Export everything to Excel whenever you like, including before you decide. The
-          club's history belongs to the club and should never be the reason you feel stuck.</p>
+          <p data-i18n="pr.faq.a3">Exporteer alles naar Excel wanneer je wilt, ook voordat je beslist. De historie
+          van de vereniging is van de vereniging en mag nooit de reden zijn dat je je vastzit.</p>
           </div>
         </details>
       <details class="faq-item">
           <summary class="faq-q">
-          Can we start personal and move the club across later?
+          <span data-i18n="pr.faq.q4">Kunnen we persoonlijk beginnen en de vereniging later overzetten?</span>
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
           </summary>
           <div class="faq-a">
-          <p>That is the usual route. One coach tries it for a season, it survives, and the club
-          then moves to a club code so everyone else can join. Your existing matches come with
-          you.</p>
+          <p data-i18n="pr.faq.a4">Dat is de gebruikelijke route. Eén coach probeert het een seizoen, het bewijst
+          zich, en de vereniging stapt daarna over op een verenigingscode zodat de rest kan
+          aansluiten. Je bestaande wedstrijden gaan met je mee.</p>
           </div>
         </details>
     </div>
   </section>
 
   <section class="sec closing">
-    <h2 class="display d-1" data-reveal>Bring one team and see</h2>
-    <p class="lede reveal-d1" data-reveal style="margin-top:20px">
-      One match is enough to judge it. Codes are issued within 24 hours.
+    <h2 class="display d-1" data-reveal data-i18n="pr.close.h2">Neem één team en zie het</h2>
+    <p class="lede reveal-d1" data-reveal style="margin-top:20px" data-i18n="pr.close.lede">
+      Eén wedstrijd is genoeg om te oordelen. Codes worden binnen 24 uur uitgegeven.
     </p>
     <div class="hero-cta reveal-d2" data-reveal>
-      <a class="btn btn-primary btn-lg" href="https://app.handball-tracker.com/?request=access">Request access</a>
-      <a class="btn btn-ghost btn-lg" href="mailto:info@handball-tracker.com?subject=Handball-Tracker%20pricing">Ask about pricing</a>
+      <a class="btn btn-primary btn-lg" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
+      <a class="btn btn-ghost btn-lg" href="mailto:info@handball-tracker.com?subject=Handball-Tracker%20prijzen" data-i18n="pr.close.ask">Vraag naar de prijzen</a>
     </div>
   </section>
 
@@ -181,14 +188,15 @@
       <span class="brand-word">Handball-Tracker</span>
     </a>
     <ul class="footer-links">
-      <li><a href="index.html">Overview</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="https://app.handball-tracker.com/">Sign in</a></li>
-      <li><a href="mailto:info@handball-tracker.com">Contact</a></li>
+      <li><a href="index.html" data-i18n="foot.overview">Overzicht</a></li>
+      <li><a href="privacy.html" data-i18n="foot.privacy">Privacy</a></li>
+      <li><a href="https://app.handball-tracker.com/" data-i18n="foot.signin">Inloggen</a></li>
+      <li><a href="mailto:info@handball-tracker.com" data-i18n="foot.contact">Contact</a></li>
     </ul>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="site.js"></script>
 </body>
 </html>

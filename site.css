@@ -343,18 +343,54 @@ p { max-width: var(--measure); color: var(--text-2); }
 .nav-links a:hover,
 .nav-links a[aria-current='page'] { color: var(--text-1); }
 
-.nav .btn { margin-left: 18px; }
+.nav .btn { margin-left: 16px; }
+
+/* Language toggle. Neutral on purpose: the active pill is white, not volt, so
+   the yellow stays reserved for the call to action. */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--ink-700);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  min-height: 30px;
+  padding: 0 9px;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out);
+}
+
+.lang-btn:hover { color: var(--text-1); }
+
+.lang-btn[aria-pressed='true'] {
+  color: var(--ink-900);
+  background: var(--text-1);
+}
 
 /* Narrow phones: tighten the bar so the call to action always fits */
 @media (max-width: 559px) {
-  .nav-inner { gap: 12px; }
-  .brand-word { font-size: 1.15rem; }
-  .nav .btn { margin-left: 12px; padding: 0 16px; font-size: 0.9rem; }
+  .nav-inner { gap: 10px; }
+  .brand-word { font-size: 1.1rem; }
+  .lang-btn { padding: 0 7px; min-height: 28px; }
+  .nav .btn { margin-left: 4px; padding: 0 14px; font-size: 0.88rem; }
 }
 
 @media (max-width: 479px) {
   .nav-links { display: none; }
-  .nav .btn { margin-left: auto; }
+  /* The logo mark alone carries the identity here; the wordmark plus the
+     toggle plus a long call to action will not all fit at 375px. */
+  .brand-word { display: none; }
+  .lang-switch { margin-left: auto; }
 }
 
 /* --------------------------------------------------------------- button */

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl"
+      data-title-en="Privacy statement | Handball-Tracker"
+      data-desc-en="How Handball-Tracker handles personal data: what data we process, why, how long we keep it and what rights you have.">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +42,7 @@
     font-weight: 600;
   }
   .todo::before { content: 'NOG INVULLEN — '; color: var(--ev-card); }
+  html[lang="en"] .todo::before { content: 'TO DO — '; }
 
   .notice {
     border: 1px solid var(--ink-700);
@@ -53,21 +56,25 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main" lang="en">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="skip">Naar de inhoud</a>
 
-<header class="nav" id="nav" lang="en">
+<header class="nav" id="nav">
   <div class="shell nav-inner">
     <a class="brand" href="index.html">
       <img class="brand-mark" src="Logo.png" width="428" height="389" alt="" decoding="async">
       <span class="brand-word">Handball-Tracker</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#tracking">Tracking</a></li>
-      <li><a href="index.html#live">Live</a></li>
-      <li><a href="index.html#stats">Statistics</a></li>
-      <li><a href="pricing.html">Plans</a></li>
+      <li><a href="index.html#tracking" data-i18n="nav.tracking">Bijhouden</a></li>
+      <li><a href="index.html#live" data-i18n="nav.live">Live</a></li>
+      <li><a href="index.html#stats" data-i18n="nav.stats">Statistieken</a></li>
+      <li><a href="pricing.html" data-i18n="nav.plans">Prijzen</a></li>
     </ul>
-    <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access">Request access</a>
+    <div class="lang-switch" role="group" aria-label="Taal kiezen / Choose language">
+      <button type="button" class="lang-btn" data-lang="nl" aria-pressed="true">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary" href="https://app.handball-tracker.com/?request=access" data-i18n="cta.request">Toegang aanvragen</a>
   </div>
 </header>
 
@@ -75,208 +82,211 @@
 <div class="shell">
 
   <section class="hero">
-    <h1 class="display d-1" style="max-width:14ch">Privacyverklaring</h1>
-    <p class="lede" style="margin-top:22px">
+    <h1 class="display d-1" style="max-width:14ch" data-i18n="pv.h1">Privacyverklaring</h1>
+    <p class="lede" style="margin-top:22px" data-i18n="pv.lede">
       Handball-Tracker verwerkt persoonsgegevens van coaches die het product gebruiken en van
       spelers die door hun coach worden ingevoerd. Hieronder staat welke gegevens dat zijn,
       waarom we ze verwerken, hoe lang we ze bewaren en welke rechten je hebt.
     </p>
-    <p class="hero-note">Laatst bijgewerkt: 20 juli 2026</p>
+    <p class="hero-note" data-i18n="pv.updated">Laatst bijgewerkt: 20 juli 2026</p>
   </section>
 
   <section class="sec legal" style="border-top:1px solid var(--ink-700)">
 
-    <h2 class="display d-2">1. Wie is verantwoordelijk</h2>
-    <p>
+    <div class="notice">
+      <p data-i18n="pv.dutchPrevails">
+        Dit is de Nederlandse versie van deze verklaring en is juridisch bindend. Wijkt een
+        vertaling hiervan af, dan geldt de Nederlandse tekst.
+      </p>
+    </div>
+
+    <h2 class="display d-2" data-i18n="pv.h1_1">1. Wie is verantwoordelijk</h2>
+    <p data-i18n="pv.p1_1">
       Handball-Tracker is verwerkingsverantwoordelijke voor de gegevens die in deze verklaring
       worden genoemd, behalve waar in hoofdstuk 4 anders staat.
     </p>
-    <span class="todo">
+    <span class="todo" data-i18n="pv.todo1">
       Juridische naam, rechtsvorm, KvK-nummer en vestigingsadres. Deze gegevens zijn verplicht
       onder artikel 13 AVG en alleen jij weet ze.
     </span>
-    <p>
+    <p data-i18n-html="pv.p1_2html">
       Contact over privacy: <a href="mailto:info@handball-tracker.com">info@handball-tracker.com</a>
     </p>
-    <p>
+    <p data-i18n="pv.p1_3">
       Wij hebben geen functionaris voor gegevensbescherming aangesteld. Dat is voor een
       organisatie van deze omvang niet verplicht.
     </p>
 
-    <h2 class="display d-2">2. Welke gegevens we verwerken</h2>
+    <h2 class="display d-2" data-i18n="pv.h1_2">2. Welke gegevens we verwerken</h2>
 
-    <h3>Als je toegang aanvraagt</h3>
-    <p>
+    <h3 data-i18n="pv.h2_a">Als je toegang aanvraagt</h3>
+    <p data-i18n="pv.p2_a">
       Via het aanvraagformulier vragen we om je naam en e-mailadres. Een telefoonnummer en een
       toelichting zijn optioneel: die velden mag je leeg laten.
     </p>
 
-    <h3>Als je een account hebt</h3>
-    <p>
+    <h3 data-i18n="pv.h2_b">Als je een account hebt</h3>
+    <p data-i18n="pv.p2_b">
       Je e-mailadres, je teamnaam, de uitnodigingscode waarmee het account is aangemaakt, en
       gegevens over je aanmeldingen. Je wachtwoord wordt versleuteld opgeslagen door onze
       hostingpartij en is voor ons niet leesbaar.
     </p>
 
-    <h3>Gegevens die je zelf invoert over spelers</h3>
-    <p>
+    <h3 data-i18n="pv.h2_c">Gegevens die je zelf invoert over spelers</h3>
+    <p data-i18n="pv.p2_c">
       Namen, rugnummers en posities van spelers, en per wedstrijd wat zij hebben gedaan: doelpunten,
       schoten, assists, reddingen, kaarten en tijdstraffen. Deze gegevens gaan over anderen dan
       jijzelf. Zie hoofdstuk 4.
     </p>
 
-    <h3>Technische gegevens</h3>
-    <p>
+    <h3 data-i18n="pv.h2_d">Technische gegevens</h3>
+    <p data-i18n="pv.p2_d">
       Wanneer er in de applicatie een fout optreedt, leggen we die fout vast met je gebruikers-ID,
       het type browser en de pagina waar de fout gebeurde. We gebruiken dit uitsluitend om
       storingen op te lossen.
     </p>
-    <p>
+    <p data-i18n-html="pv.p2_e_html">
       We gebruiken <strong>geen</strong> analytics, geen advertentienetwerken en geen
       trackingcookies.
     </p>
 
-    <h2 class="display d-2">3. Waarom, en op welke grondslag</h2>
+    <h2 class="display d-2" data-i18n="pv.h1_3">3. Waarom, en op welke grondslag</h2>
     <dl>
-      <dt>Het beoordelen van een toegangsaanvraag</dt>
-      <dd>
+      <dt data-i18n="pv.dt3_1">Het beoordelen van een toegangsaanvraag</dt>
+      <dd data-i18n="pv.dd3_1">
         Grondslag: het op jouw verzoek nemen van stappen voorafgaand aan een overeenkomst
         (artikel 6 lid 1 sub b AVG).
       </dd>
 
-      <dt>Het leveren van de applicatie: account, wedstrijden, statistieken, uitzendingen</dt>
-      <dd>Grondslag: uitvoering van de overeenkomst met jou (artikel 6 lid 1 sub b AVG).</dd>
+      <dt data-i18n="pv.dt3_2">Het leveren van de applicatie: account, wedstrijden, statistieken, uitzendingen</dt>
+      <dd data-i18n="pv.dd3_2">Grondslag: uitvoering van de overeenkomst met jou (artikel 6 lid 1 sub b AVG).</dd>
 
-      <dt>Het oplossen van storingen en het beveiligen van de dienst</dt>
-      <dd>
+      <dt data-i18n="pv.dt3_3">Het oplossen van storingen en het beveiligen van de dienst</dt>
+      <dd data-i18n="pv.dd3_3">
         Grondslag: gerechtvaardigd belang (artikel 6 lid 1 sub f AVG), namelijk een werkend en
         veilig product kunnen aanbieden.
       </dd>
 
-      <dt>Het voeren van een administratie en het voldoen aan fiscale verplichtingen</dt>
-      <dd>Grondslag: wettelijke verplichting (artikel 6 lid 1 sub c AVG).</dd>
+      <dt data-i18n="pv.dt3_4">Het voeren van een administratie en het voldoen aan fiscale verplichtingen</dt>
+      <dd data-i18n="pv.dd3_4">Grondslag: wettelijke verplichting (artikel 6 lid 1 sub c AVG).</dd>
     </dl>
 
-    <h2 class="display d-2">4. Spelersgegevens: jouw rol en de onze</h2>
+    <h2 class="display d-2" data-i18n="pv.h1_4">4. Spelersgegevens: jouw rol en de onze</h2>
     <div class="notice">
-      <p>
+      <p data-i18n-html="pv.notice4_html">
         <strong>Dit hoofdstuk is belangrijk voor coaches en verenigingen.</strong> Spelers voeren
         hun gegevens niet zelf in en hebben vaak geen contact met ons.
       </p>
     </div>
-    <p>
+    <p data-i18n="pv.p4_1">
       Voor de gegevens die jij over spelers invoert, ben jij of je vereniging
       verwerkingsverantwoordelijke. Wij zijn verwerker: we slaan die gegevens op en tonen ze
       terug, maar we bepalen niet welke spelers je invoert of waarvoor je de statistieken
       gebruikt.
     </p>
-    <p>
+    <p data-i18n="pv.p4_2">
       Dat betekent dat de vereniging verantwoordelijk is voor een geldige grondslag om
       spelersgegevens te verwerken en voor het informeren van spelers, en bij minderjarigen van
       hun ouders of verzorgers. Een groot deel van het jeugdhandbal betreft minderjarigen; ga
       daar zorgvuldig mee om.
     </p>
-    <p>
+    <p data-i18n-html="pv.p4_3html">
       Voor deze verwerking hoort een verwerkersovereenkomst tussen jouw vereniging en ons te
       bestaan (artikel 28 AVG). Vraag die bij ons op via
       <a href="mailto:info@handball-tracker.com">info@handball-tracker.com</a>.
     </p>
-    <span class="todo">
+    <span class="todo" data-i18n="pv.todo4">
       Er is nog geen verwerkersovereenkomst opgesteld. Zolang die er niet is, klopt de alinea
       hierboven niet volledig. Laat een model opstellen of nakijken voordat je clubs aansluit.
     </span>
 
-    <h2 class="display d-2">5. Live uitzenden is openbaar</h2>
-    <p>
+    <h2 class="display d-2" data-i18n="pv.h1_5">5. Live uitzenden is openbaar</h2>
+    <p data-i18n-html="pv.p5_1html">
       Als je een wedstrijd live uitzendt, ontstaat een link naar een openbare pagina. Die pagina
       is <strong>niet met een wachtwoord beveiligd</strong>: iedereen die de link heeft, kan de
       stand, de gebeurtenissen en de namen van de spelers zien.
     </p>
-    <p>
+    <p data-i18n="pv.p5_2">
       Deel die link daarom bewust. Zorg dat je spelers, en bij minderjarigen hun ouders of
       verzorgers, weten dat hun naam en prestaties op die manier zichtbaar kunnen zijn. Je kunt
       het uitzenden op elk moment stoppen.
     </p>
 
-    <h2 class="display d-2">6. Wie de gegevens verder verwerken</h2>
-    <p>We schakelen de volgende partijen in:</p>
+    <h2 class="display d-2" data-i18n="pv.h1_6">6. Wie de gegevens verder verwerken</h2>
+    <p data-i18n="pv.p6_1">We schakelen de volgende partijen in:</p>
     <ul>
-      <li><strong>Supabase</strong> — database, accounts en authenticatie.</li>
-      <li><strong>Cloudflare</strong> — hosting en levering van deze website en de applicatie.</li>
-      <li>
-        <strong>Google Fonts</strong> — de lettertypen op deze site worden bij Google opgehaald,
-        waarbij je IP-adres aan Google wordt doorgegeven.
-      </li>
+      <li data-i18n-html="pv.li6_1html"><strong>Supabase</strong> &mdash; database, accounts en authenticatie.</li>
+      <li data-i18n-html="pv.li6_2html"><strong>Cloudflare</strong> &mdash; hosting en levering van deze website en de applicatie.</li>
     </ul>
-    <p>
+    <p data-i18n="pv.p6_2">
       We verkopen geen gegevens en delen ze niet met derden voor marketingdoeleinden.
     </p>
-    <span class="todo">
+    <span class="todo" data-i18n="pv.todo6">
       In welke regio draait het Supabase-project? Staat die buiten de EER, dan is dit een
       doorgifte naar een derde land en moet je hier vermelden op welke waarborg die is gebaseerd,
       bijvoorbeeld standaardcontractbepalingen.
     </span>
 
-    <h2 class="display d-2">7. Hoe lang we gegevens bewaren</h2>
+    <h2 class="display d-2" data-i18n="pv.h1_7">7. Hoe lang we gegevens bewaren</h2>
     <dl>
-      <dt>Toegangsaanvragen die niet tot een account leiden</dt>
-      <dd>6 maanden na afhandeling, daarna automatisch verwijderd.</dd>
+      <dt data-i18n="pv.dt7_1">Toegangsaanvragen die niet tot een account leiden</dt>
+      <dd data-i18n="pv.dd7_1">6 maanden na afhandeling, daarna automatisch verwijderd.</dd>
 
-      <dt>Foutmeldingen</dt>
-      <dd>90 dagen, daarna automatisch verwijderd.</dd>
+      <dt data-i18n="pv.dt7_2">Foutmeldingen</dt>
+      <dd data-i18n="pv.dd7_2">90 dagen, daarna automatisch verwijderd.</dd>
 
-      <dt>Account, wedstrijden, seizoenen en spelersgegevens</dt>
-      <dd>
+      <dt data-i18n="pv.dt7_3">Account, wedstrijden, seizoenen en spelersgegevens</dt>
+      <dd data-i18n="pv.dd7_3">
         Zolang je account bestaat. Je kunt je gegevens op elk moment naar Excel exporteren en
         vragen om verwijdering.
       </dd>
     </dl>
-    <span class="todo">
+    <span class="todo" data-i18n="pv.todo7">
       Bevestig deze termijnen. Ze zijn een voorstel en moeten overeenkomen met wat
       data-retention-cleanup.sql daadwerkelijk uitvoert.
     </span>
 
-    <h2 class="display d-2">8. Je rechten</h2>
-    <p>Je hebt het recht om:</p>
+    <h2 class="display d-2" data-i18n="pv.h1_8">8. Je rechten</h2>
+    <p data-i18n="pv.p8_1">Je hebt het recht om:</p>
     <ul>
-      <li>je gegevens in te zien;</li>
-      <li>onjuiste gegevens te laten corrigeren;</li>
-      <li>je gegevens te laten verwijderen;</li>
-      <li>de verwerking te laten beperken;</li>
-      <li>je gegevens in een gangbaar bestandsformaat te ontvangen;</li>
-      <li>bezwaar te maken tegen verwerking op grond van gerechtvaardigd belang;</li>
-      <li>gegeven toestemming op elk moment in te trekken, zonder terugwerkende kracht.</li>
+      <li data-i18n="pv.li8_1">je gegevens in te zien;</li>
+      <li data-i18n="pv.li8_2">onjuiste gegevens te laten corrigeren;</li>
+      <li data-i18n="pv.li8_3">je gegevens te laten verwijderen;</li>
+      <li data-i18n="pv.li8_4">de verwerking te laten beperken;</li>
+      <li data-i18n="pv.li8_5">je gegevens in een gangbaar bestandsformaat te ontvangen;</li>
+      <li data-i18n="pv.li8_6">bezwaar te maken tegen verwerking op grond van gerechtvaardigd belang;</li>
+      <li data-i18n="pv.li8_7">gegeven toestemming op elk moment in te trekken, zonder terugwerkende kracht.</li>
     </ul>
-    <p>
+    <p data-i18n-html="pv.p8_2html">
       Stuur je verzoek naar <a href="mailto:info@handball-tracker.com">info@handball-tracker.com</a>.
       We reageren binnen een maand. Gaat het om spelersgegevens, richt je dan tot de vereniging:
       die is daarvoor verantwoordelijk, en wij helpen de vereniging het verzoek uit te voeren.
     </p>
 
-    <h2 class="display d-2">9. Klacht indienen</h2>
-    <p>
+    <h2 class="display d-2" data-i18n="pv.h1_9">9. Klacht indienen</h2>
+    <p data-i18n-html="pv.p9_1html">
       Ben je het oneens met hoe wij met je gegevens omgaan, laat het ons weten. Je hebt daarnaast
       altijd het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens via
       <a href="https://www.autoriteitpersoonsgegevens.nl" rel="noopener">autoriteitpersoonsgegevens.nl</a>.
     </p>
 
-    <h2 class="display d-2">10. Cookies</h2>
-    <p>
+    <h2 class="display d-2" data-i18n="pv.h1_10">10. Cookies</h2>
+    <p data-i18n="pv.p10_1">
       Deze website plaatst geen cookies. De applicatie slaat alleen technisch noodzakelijke
       gegevens op in je browser om je ingelogd te houden. Daarvoor is geen toestemming vereist en
       daarom zie je geen cookiemelding.
     </p>
 
-    <h2 class="display d-2">11. Beveiliging</h2>
-    <p>
+    <h2 class="display d-2" data-i18n="pv.h1_11">11. Beveiliging</h2>
+    <p data-i18n-html="pv.p11_1html">
       Verkeer verloopt via een versleutelde verbinding en toegang tot gegevens is beperkt tot je
       eigen account. Ontdek je een kwetsbaarheid, meld die dan via
       <a href="mailto:info@handball-tracker.com">info@handball-tracker.com</a> en publiceer hem
       niet.
     </p>
 
-    <h2 class="display d-2">12. Wijzigingen</h2>
-    <p>
+    <h2 class="display d-2" data-i18n="pv.h1_12">12. Wijzigingen</h2>
+    <p data-i18n="pv.p12_1">
       We passen deze verklaring aan als het product verandert. De datum bovenaan geeft aan wanneer
       dat voor het laatst is gebeurd. Bij ingrijpende wijzigingen laten we het je weten.
     </p>
@@ -286,22 +296,22 @@
 </div>
 </main>
 
-<footer class="footer" lang="en">
+<footer class="footer">
   <div class="shell footer-inner">
     <a class="brand" href="index.html">
       <img class="brand-mark" src="Logo.png" width="428" height="389" alt="" decoding="async">
       <span class="brand-word">Handball-Tracker</span>
     </a>
     <ul class="footer-links">
-      <li><a href="index.html">Overview</a></li>
-      <li><a href="pricing.html">Plans</a></li>
-      <li><a href="privacy.html" aria-current="page" lang="nl">Privacy</a></li>
-      <li><a href="https://app.handball-tracker.com/">Sign in</a></li>
-      <li><a href="mailto:info@handball-tracker.com">Contact</a></li>
+      <li><a href="index.html" data-i18n="foot.overview">Overzicht</a></li>
+      <li><a href="pricing.html" data-i18n="foot.plans">Prijzen</a></li>
+      <li><a href="https://app.handball-tracker.com/" data-i18n="foot.signin">Inloggen</a></li>
+      <li><a href="mailto:info@handball-tracker.com" data-i18n="foot.contact">Contact</a></li>
     </ul>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="site.js"></script>
 </body>
 </html>
