@@ -358,6 +358,7 @@ p { max-width: var(--measure); color: var(--text-2); }
 }
 
 .lang-btn {
+  position: relative;
   min-height: 30px;
   padding: 0 9px;
   border-radius: 7px;
@@ -368,6 +369,19 @@ p { max-width: var(--measure); color: var(--text-2); }
   cursor: pointer;
   transition: color var(--dur-fast) var(--ease-out),
               background-color var(--dur-fast) var(--ease-out);
+}
+
+/* Lift the tap target to 44px without enlarging the visible pill: an invisible
+   overlay overflows a few px above and below the 30px button. Same intent as
+   the padding-block trick on .brand. */
+.lang-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
 }
 
 .lang-btn:hover { color: var(--text-1); }
